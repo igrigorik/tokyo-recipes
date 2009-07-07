@@ -1,0 +1,27 @@
+= Simple Session trail database
+
+Tracks user ids and visited user resources by timestamping each interaction. The list of all visits can then be retrieved by querying for a user id.
+
+== Starting server with incr extension
+  > ttserver -ext session-trail.lua test.tch
+ 
+== Executing from command line
+  > tcrmgr ext localhost add 1 123
+  > tcrmgr ext localhost add 1 256
+  > tcrmgr ext localhost add 1 987
+  > tcrmgr ext localhost add 2 987
+  > tcrmgr ext localhost list 1
+    987	1247008220
+    256	1247008216
+    123	1247008123
+
+== Executing via Ruby
+
+  > ruby session-trail.rb
+    1
+    2
+    3
+    1
+    343	1247008682
+    253	1247008681
+    123	1247008680

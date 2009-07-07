@@ -1,4 +1,4 @@
-= Echo command
+= Simple High-Low Betting Game 
 
 Implements a simple high-low betting game via Lua and TC as a database to persist bet / player information
 
