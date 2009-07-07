@@ -1,0 +1,17 @@
+= Echo command
+
+Implements a simple echo command (nothign is stored in TC)
+
+== Starting server with incr extension
+  > ttserver -ext echo.lua test.tch
+ 
+== Executing from command line
+  > tcrmgr ext localhost echo foo bar
+  > foo:bar
+  > tcrmgr ext localhost incr hello world
+  > hello:world
+
+== Executing via Ruby
+
+  > ruby echo.rb
+  > hello:world
