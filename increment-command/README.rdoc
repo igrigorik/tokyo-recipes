@@ -1,0 +1,23 @@
+= Increment command
+
+Implements a simple incr command on top of Tokyo Cabinet via a Lua Extension. 
+
+== Starting server with incr extension
+  > ttserver -ext incr.lua test.tch
+ 
+== Executing from command line
+  > tcrmgr ext localhost incr keyname 2
+  > 2
+  > tcrmgr ext localhost incr keyname 2
+  > 4
+
+== Executing via Ruby
+
+  > ruby incr.rb
+  > 2
+  > 4
+  > 6
+  > 8
+  > 9
+  > 10 
+
