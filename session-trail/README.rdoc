@@ -25,3 +25,5 @@ Tracks user ids and visited user resources by timestamping each interaction. The
     343	1247008682
     253	1247008681
     123	1247008680
+
+Source: http://alpha.mixi.co.jp/blog/?p=236

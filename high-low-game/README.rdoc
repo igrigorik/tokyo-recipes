@@ -36,3 +36,5 @@ Implements a simple high-low betting game via Lua and TC as a database to persis
   99:42 (high) ... You lost!
   Your money is 10000.
   Round 3 Bet!
+
+Source: http://alpha.mixi.co.jp/blog/?p=236
