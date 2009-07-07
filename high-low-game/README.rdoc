@@ -1,0 +1,38 @@
+= Echo command
+
+Implements a simple high-low betting game via Lua and TC as a database to persist bet / player information
+
+== Starting server with incr extension
+  > ttserver -ext lhgame.lua test.tch
+ 
+== Executing from command line
+  [ilya@igrigorik-nix high-low-game]# tcrmgr ext localhost start ilya 5000
+	Welcome, ilya.
+	The current number is 88.
+	Your money is 5000.
+	Round 1 Bet!
+
+	[ilya@igrigorik-nix high-low-game]# tcrmgr ext localhost low ilya 1000
+	The current number is 91.
+	91:88 (high) ... You lost!
+	Your money is 4000.
+	Round 2 Bet!
+
+  ...
+
+== Executing via Ruby
+
+  > ruby hlgame.rb
+  
+  Welcome, ilya.
+  The current number is 5.
+  Your money is 10000.
+  Round 1 Bet!
+  The current number is 42.
+  42:5 (high) ... You won!
+  Your money is 12000.
+  Round 2 Bet!
+  The current number is 99.
+  99:42 (high) ... You lost!
+  Your money is 10000.
+  Round 3 Bet!

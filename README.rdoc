@@ -1,0 +1,22 @@
+
+
+== Installing Tokyo Cabinet with Lua
+  yum install lua lua-devel
+
+	git clone git://github.com/etrepum/tokyo-cabinet.git
+  git clone git://github.com/etrepum/tokyo-tyrant.git
+
+  (or get latest files from sourceforge)
+	http://sourceforge.net/projects/tokyocabinet/files/  
+
+	cd tokyo-cabinet
+  ./configure --enable-lua
+  make && make install
+
+  cd tokyo-tyrant
+  ./configure
+  make && make install
+
+  gem install rufus-tokyo
+
+Source: http://openwferu.rubyforge.org/tokyo.html
