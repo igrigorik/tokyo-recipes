@@ -7,16 +7,16 @@ Implements a simple high-low betting game via Lua and TC as a database to persis
  
 == Executing from command line
   [ilya@igrigorik-nix high-low-game]# tcrmgr ext localhost start ilya 5000
-	Welcome, ilya.
-	The current number is 88.
-	Your money is 5000.
-	Round 1 Bet!
+  Welcome, ilya.
+  The current number is 88.
+  Your money is 5000.
+  Round 1 Bet!
 
-	[ilya@igrigorik-nix high-low-game]# tcrmgr ext localhost low ilya 1000
-	The current number is 91.
-	91:88 (high) ... You lost!
-	Your money is 4000.
-	Round 2 Bet!
+  [ilya@igrigorik-nix high-low-game]# tcrmgr ext localhost low ilya 1000
+  The current number is 91.
+  91:88 (high) ... You lost!
+  Your money is 4000.
+  Round 2 Bet!
 
   ...
 
