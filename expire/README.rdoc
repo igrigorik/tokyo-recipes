@@ -1,0 +1,19 @@
+= Auto record expire based on TTL  
+
+Implements TTL-based record expiry via a Lua script which is periodically executed by the TC runtime. 
+ - The calling period is customizable via -extpc flag
+ - Data is stored inside a 'table' engine where key 'x' stores the unix timestamp for the expiry date
+ - Lua cleanup script is called periodically to scan the database for keys ready to be removed, which are then purged from the DB.
+
+== Starting server
+  # call expire script every 5 seconds
+  > ttserver -ext expire.lua -extpc expire 5 "casket.tct#idx=x:dec#bnum=2000000"
+ 
+== Executing via Ruby
+
+  > ruby expire.rb
+  > nil
+  > {"name"=>"bob", "x"=>"1247025691"}
+
+Source: http://alpha.mixi.co.jp/blog/?p=862
+Source: http://alpha.mixi.co.jp/blog/?p=318
