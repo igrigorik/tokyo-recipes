@@ -1,4 +1,4 @@
-
+Lua extensions: http://tokyocabinet.sourceforge.net/tyrantdoc/#luaext
 
 == Installing Tokyo Cabinet with Lua
   yum install lua lua-devel
