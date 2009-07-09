@@ -1,0 +1,30 @@
+= Map-Reduce with Tokyo Cabinet
+
+Executing map-reduce jobs within Tokyo Cabinet
+
+== Starting server with incr extension
+  > ttserver -ext wordcount.lua test.tch
+ 
+== Executing from command line
+  > tcrmgr put localhost 1 "This is a pen."
+  > tcrmgr put localhost 2 "Hello world"
+  > tcrmgr put localhost 2 "Life is good"
+  > tcrmgr ext localhost wordcount
+    a	1
+    good	1
+    is	2
+    life	1
+    pen	1
+    this	1
+
+== Executing via Ruby
+
+  > ruby wordcount.rb
+    a	1
+    beautiful	1
+    bob	1
+    hello	2
+    what	1
+    world	2
+
+Source: http://alpha.mixi.co.jp/blog/?p=566
