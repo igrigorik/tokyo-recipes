@@ -1,4 +1,27 @@
-Lua extensions: http://tokyocabinet.sourceforge.net/tyrantdoc/#luaext
+Tokyo Cabinet is a library of routines for managing a database. The database is a simple data file
+containing records, each is a pair of a key and a value. Every key and value is serial bytes with 
+variable length. Both binary data and character string can be used as a key and a value. There is 
+neither concept of data tables nor data types. Records are organized in hash table, B+ tree, or 
+fixed-length array.
+
+== User Defined Functions (UDF's) via Lua
+
+As of mid '08, Hirabayashi-san embedded Lua into Tokyo Cabinet's runtime to allow for easy
+extensibility of the database. There is a common set of Lua API's built in, which allow you to
+interact with the underlying data, execute your extensions remotely, or even on a timer. This
+allows us to build additional functionality on top of the Tokyo Cabinet database with Lua! 
+
+A few examples you will find in this repository:
+- Simple echo application
+- Implemention of sets operations (like Redis) on top of TC
+- Example of executing Map-Reduce jobs on data within TC
+- TTL / Expire functionality (like memcached) 
+- and many others...
+
+Please do fork the repo and add your recipes to the list! 
+
+- Lua API: http://tokyocabinet.sourceforge.net/tyrantdoc/#luaext
+- Announcement blog post: http://alpha.mixi.co.jp/blog/?p=236
 
 == Installing Tokyo Cabinet with Lua
   yum install lua lua-devel
