@@ -1,0 +1,22 @@
+= Dynamically loading extensions into Tokyo Cabinet
+
+Guide for loading extensions at runtime, instead of specifying them at startup time.
+
+Extensions can be eval'ed at runtime. In this example we'll define and redefine a hello function.
+
+== Starting server with eval extension
+  > ttserver -ext eval.lua test.tch
+ 
+== Executing from command line
+  > tcrmgr ext localhost eval 'function hello() return "hello" end'
+  > tcrmgr ext localhost hello
+    hello
+  > tcrmgr ext localhost eval 'function hello() return "bye" end'
+  > tcrmgr ext localhost hello
+    bye
+
+== Executing via Ruby
+
+  > ruby dynamic.rb 
+  > hello
+  > bye
