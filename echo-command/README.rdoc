@@ -8,7 +8,7 @@ Implements a simple echo command (nothign is stored in TC)
 == Executing from command line
   > tcrmgr ext localhost echo foo bar
   > foo:bar
-  > tcrmgr ext localhost incr hello world
+  > tcrmgr ext localhost echo hello world
   > hello:world
 
 == Executing via Ruby

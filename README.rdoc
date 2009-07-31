@@ -26,13 +26,12 @@ Please do fork the repo and add your recipes to the list!
 == Installing Tokyo Cabinet with Lua
   yum install lua lua-devel
 
-	git clone git://github.com/etrepum/tokyo-cabinet.git
+  git clone git://github.com/etrepum/tokyo-cabinet.git
   git clone git://github.com/etrepum/tokyo-tyrant.git
 
-  (or get latest files from sourceforge)
-	http://sourceforge.net/projects/tokyocabinet/files/  
+  (or get latest files from sourceforge: http://sourceforge.net/projects/tokyocabinet/files/)
 
-	cd tokyo-cabinet
+  cd tokyo-cabinet
   ./configure --enable-lua
   make && make install
 
