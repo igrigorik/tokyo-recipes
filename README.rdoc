@@ -42,3 +42,16 @@ Please do fork the repo and add your recipes to the list!
   gem install rufus-tokyo
 
 Source: http://openwferu.rubyforge.org/tokyo.html
+
+== Invoking Lua extensions via the HTTP interface
+
+It is possible to invoke custom Lua functions via direct HTTP calls. For example, using the
+echo-command example, we can invoke the function via:
+
+  $ curl -i -X POST -H “X-TT-XNAME: echo” http://localhost:1978/foo -d “bar”
+
+  HTTP/1.1 200 OK
+  Content-Type: application/octet-stream
+  Content-Length: 7
+
+  foo:bar
