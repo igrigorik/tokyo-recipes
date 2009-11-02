@@ -1,3 +1,7 @@
+Video of FutureRuby talk ("Lean & Mean Tokyo Cabinet Recipes") on InfoQ:
+- http://www.infoq.com/presentations/grigorik-tokyo-cabinet-recipes
+
+
 Tokyo Cabinet is a library of routines for managing a database. The database is a simple data file
 containing records, each is a pair of a key and a value. Every key and value is serial bytes with 
 variable length. Both binary data and character string can be used as a key and a value. There is 
