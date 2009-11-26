@@ -36,11 +36,11 @@ Please do fork the repo and add your recipes to the list!
   (or get latest files from sourceforge: http://sourceforge.net/projects/tokyocabinet/files/)
 
   cd tokyo-cabinet
-  ./configure --enable-lua
+  ./configure 
   make && make install
 
   cd tokyo-tyrant
-  ./configure
+  ./configure --enable-lua
   make && make install
 
   gem install rufus-tokyo
