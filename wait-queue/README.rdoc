@@ -1,0 +1,30 @@
+= Queue
+
+Implements a simple function to wait until task is put into a queue. The queue will be deleted once dequeued.
+
+== Starting server with extension
+  > ttserver -ext wait_queue test.tch
+ 
+== Executing from command line (subscriber)
+  > tcrmgr ext localhost wait_queue foo 1
+
+  # Waits until enqueue is called.
+  
+  > bar
+
+== Executing from command line (publisher)
+  > tcrmgr ext localhost enqueue foo bar
+  > bar
+
+== Executing via Ruby (subscriber)
+
+  > ruby wait_queue.rb
+
+  # Waits until enqueue is called.
+  
+  > bar
+
+== Executing via Ruby (publisher)
+
+  > ruby enqueue.rb
+  > bar
