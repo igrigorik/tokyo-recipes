@@ -5,7 +5,6 @@ require 'tokyo_tyrant'
 require 'pp'
 t = TokyoTyrant::Table.new('127.0.0.1', 1978)
 
-
 # bulk operations
 h = {}
 h[0] = { :name => 'A: Joe task one', :region => 'us', :priority => 2, :url => 'http://example.com/0', :status => 'new'}
@@ -15,19 +14,21 @@ h[3] = { :name => 'D: Bob task two', :region => 'eu', :priority => 1, :url => 'h
 h[4] = { :name => 'E: Bob task three', :region => 'us', :priority => 1, :url => 'http://example.com/3', :status => 'new'}
 
 t.mput(h)
-# t.mget(0..3)
+
 
 p  "Fetch only new tasks"
-# q = t.query
-#   q.condition('status', :streq, 'new')
-#   q.limit(1)
-# p  q.get 
-# # =>   [{"name"=>"A: Joe task one", "region"=>"us", "priority"=>"2", "url"=>"http://example.com/0", "__id"=>"0", "status"=>"new"}]
+q = t.query
+  q.condition('status', :streq, 'new')
+  q.limit(1)
+p  q.get 
+# =>   [{"name"=>"A: Joe task one", "region"=>"us", "priority"=>"2", "url"=>"http://example.com/0", "__id"=>"0", "status"=>"new"}]
 p "Changing to pending"
-p t.ext(:update_new_task, 1, 2)
+p t.ext(:update_new_task_2, 1, 2)
 
+p "all"
+pp t.mget(0..4)
 
-p "Fetch only new tasks order by priority"
+# p "Fetch only new tasks order by priority"
 # q = t.query
 #   q.condition('status', :streq, 'new')
 #   q.order_by(:priority, :strasc)
@@ -35,10 +36,10 @@ p "Fetch only new tasks order by priority"
 # p  q.get
 # => [{"name"=>"D: Bob task two", "region"=>"eu", "priority"=>"1", "url"=>"http://example.com/3", "__id"=>"3", "status"=>"new"}]
 
-p "Changing to pending"
-p t.ext(:priority, 1, 2)
-
-p "Fetch only Bob's US new tasks"
+# p "Changing to pending"
+# p t.ext(:priority, 1, 2)
+# 
+# p "Fetch only Bob's US new tasks"
 # q = t.query
 #   q.condition('status', :streq, 'new')
 #   q.condition('region', :streq, 'us')
@@ -47,5 +48,5 @@ p "Fetch only Bob's US new tasks"
 # p q.get
 # => [{"name"=>"B: Bob task one", "region"=>"us", "priority"=>"2", "url"=>"http://example.com/1", "__id"=>"1", "status"=>"new"}]
 
-p "Changing to pending"
-p t.ext(:combo, 1, 2)
+# p "Changing to pending"
+# p t.ext(:combo, 1, 2)
